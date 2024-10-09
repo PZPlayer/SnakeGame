@@ -1,2 +1,0 @@
-# SnakeGame
-For XYZ school
