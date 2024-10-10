@@ -1,2 +1,8 @@
 ﻿  GameMain.cpp
+C:\Users\lzhil\Documents\GitHub\SnakeGame\SnakeGame\GameMain.cpp(45,62): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\lzhil\Documents\GitHub\SnakeGame\SnakeGame\GameMain.cpp(45,35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\lzhil\Documents\GitHub\SnakeGame\SnakeGame\GameMain.cpp(107,46): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\lzhil\Documents\GitHub\SnakeGame\SnakeGame\GameMain.cpp(107,32): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\lzhil\Documents\GitHub\SnakeGame\SnakeGame\GameMain.cpp(113,72): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\lzhil\Documents\GitHub\SnakeGame\SnakeGame\GameMain.cpp(113,45): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   ApplesGame.vcxproj -> C:\Users\lzhil\Documents\GitHub\SnakeGame\SnakeGame\x64\Debug\ApplesGame.exe
