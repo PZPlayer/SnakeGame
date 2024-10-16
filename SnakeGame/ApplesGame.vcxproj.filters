@@ -19,6 +19,9 @@
     <ClCompile Include="Math.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
+    <ClCompile Include="Orange.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">

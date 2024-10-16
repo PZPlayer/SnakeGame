@@ -16,4 +16,5 @@ namespace SnakeGame {
 
 	void InitPlayer(Player& player);
 	void DrawPlayer(sf::RenderWindow& window, Player& player);
+	void Eat(Player& player, Game& game);
 }

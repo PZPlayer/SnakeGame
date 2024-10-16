@@ -1,2 +1,24 @@
 ﻿  Game.cpp
+  GameMain.cpp
+  Math.cpp
+C:\Users\lzhil\Documents\GitHub\SnakeGame\SnakeGame\Math.cpp(6,83): warning C4244: 'argument': conversion from 'float' to 'T', possible loss of data
+C:\Users\lzhil\Documents\GitHub\SnakeGame\SnakeGame\Math.cpp(6,83): warning C4244:         with
+C:\Users\lzhil\Documents\GitHub\SnakeGame\SnakeGame\Math.cpp(6,83): warning C4244:         [
+C:\Users\lzhil\Documents\GitHub\SnakeGame\SnakeGame\Math.cpp(6,83): warning C4244:             T=int
+C:\Users\lzhil\Documents\GitHub\SnakeGame\SnakeGame\Math.cpp(6,83): warning C4244:         ]
+C:\Users\lzhil\Documents\GitHub\SnakeGame\SnakeGame\Math.cpp(6,47): warning C4244: 'argument': conversion from 'float' to 'T', possible loss of data
+C:\Users\lzhil\Documents\GitHub\SnakeGame\SnakeGame\Math.cpp(6,47): warning C4244:         with
+C:\Users\lzhil\Documents\GitHub\SnakeGame\SnakeGame\Math.cpp(6,47): warning C4244:         [
+C:\Users\lzhil\Documents\GitHub\SnakeGame\SnakeGame\Math.cpp(6,47): warning C4244:             T=int
+C:\Users\lzhil\Documents\GitHub\SnakeGame\SnakeGame\Math.cpp(6,47): warning C4244:         ]
+C:\Users\lzhil\Documents\GitHub\SnakeGame\SnakeGame\Math.cpp(11,17): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  Orange.cpp
+  Player.cpp
+C:\Users\lzhil\Documents\GitHub\SnakeGame\SnakeGame\Player.cpp(14,77): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\lzhil\Documents\GitHub\SnakeGame\SnakeGame\Player.cpp(14,43): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\lzhil\Documents\GitHub\SnakeGame\SnakeGame\Player.cpp(42,67): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\lzhil\Documents\GitHub\SnakeGame\SnakeGame\Player.cpp(42,39): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\lzhil\Documents\GitHub\SnakeGame\SnakeGame\Player.cpp(49,93): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\lzhil\Documents\GitHub\SnakeGame\SnakeGame\Player.cpp(49,59): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Generating Code...
   ApplesGame.vcxproj -> C:\Users\lzhil\Documents\GitHub\SnakeGame\SnakeGame\x64\Debug\ApplesGame.exe

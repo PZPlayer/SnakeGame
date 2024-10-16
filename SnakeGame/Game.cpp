@@ -4,10 +4,7 @@ namespace SnakeGame {
 
 	void Start(Game& game) {
 		game.player.snakeHead = { numRows / 2, numCols / 2 };
-		game.orange.shape.setFillColor(sf::Color::Color(255, 165, 0));
-		game.orange.shape.setSize({ cellSize, cellSize });
-		game.orange.position = GetRandomPosition();
-		game.orange.shape.setPosition((float)game.orange.position.x * cellSize, (float)game.orange.position.y * cellSize);
+		InitOrange(game.orange);
         #pragma region BodyCreate
 		InitPlayer(game.player);
 #pragma endregion
@@ -71,6 +68,10 @@ namespace SnakeGame {
 			}
 		}
 #pragma endregion
+		if (ifTouchObj(game.player.snakeHead, game.orange.position, 1, 1)) {
+			SetRandomPos(game.orange);
+			Eat(game.player, game);
+		}
 	}
 
 	void GameOver(sf::RenderWindow& window) {
@@ -78,7 +79,7 @@ namespace SnakeGame {
 	}
 
 	void Draw(Game& game, sf::RenderWindow& window) {
-		window.draw(game.orange.shape);
+		DrawOrange(window, game.orange);
         #pragma region BodyDraw
 		DrawPlayer(window, game.player);
 #pragma endregion

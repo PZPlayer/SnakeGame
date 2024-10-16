@@ -8,4 +8,10 @@ namespace SnakeGame {
 		sf::Vector2i position;
 		sf::RectangleShape shape;
 	};
+
+	struct Game;
+
+	void InitOrange(Orange& orange);
+	void SetRandomPos(Orange& orange);
+	void DrawOrange(sf::RenderWindow& window, Orange& orange);
 }
