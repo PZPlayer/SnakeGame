@@ -11,7 +11,7 @@ namespace SnakeGame {
 			sf::RectangleShape part;
 			part.setSize({ cellSize, cellSize });
 			part.setFillColor(sf::Color::Color(240 - i * 5, 240 - i * 5, 240 - i * 5));
-			part.setPosition(player.snakeBody[i].x * cellSize, player.snakeBody[i].y * cellSize);
+			part.setPosition(float(player.snakeBody[i].x * cellSize), float(player.snakeBody[i].y * cellSize));
 			player.snakeParts.push_back(part);
 		}
 	}
@@ -39,14 +39,14 @@ namespace SnakeGame {
 		sf::RectangleShape newPart;
 		newPart.setSize({ cellSize, cellSize });
 		newPart.setFillColor(sf::Color(240 - static_cast<int>(player.snakeBody.size() - 1) * 5, 240 - static_cast<int>(player.snakeBody.size() - 1) * 5, 240 - static_cast<int>(player.snakeBody.size() - 1) * 5));
-		newPart.setPosition(newPartCoords.x * cellSize, newPartCoords.y * cellSize);
+		newPart.setPosition(float(newPartCoords.x * cellSize), float(newPartCoords.y * cellSize));
 		player.snakeParts.push_back(newPart);
 
 	}
 
 	void DrawPlayer(sf::RenderWindow& window, Player& player) {
 		for (int i = 1; i < player.snakeBody.size(); ++i) {
-			player.snakeParts[i].setPosition(player.snakeBody[i].x * cellSize, player.snakeBody[i].y * cellSize);
+			player.snakeParts[i].setPosition(float(player.snakeBody[i].x * cellSize), float(player.snakeBody[i].y * cellSize));
 		}
 		for (const auto& part : player.snakeParts) {
 			window.draw(part);

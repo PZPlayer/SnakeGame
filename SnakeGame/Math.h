@@ -9,4 +9,6 @@ namespace SnakeGame {
 	bool ifTouchObj(sf::Vector2i pos1, sf::Vector2i pos2, float size1, float size2);
 
 	struct Game;
+
+	void SetTextOrigin(sf::Text text, float x, float y);
 }

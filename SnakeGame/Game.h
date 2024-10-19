@@ -4,6 +4,7 @@
 #include <vector>
 #include "Constans.h"
 #include "Player.h"
+#include "TextConfg.h"
 #include "Orange.h"
 #include "Math.h"
 
@@ -23,6 +24,12 @@ namespace SnakeGame {
 
 		Player player;
 		Orange orange;
+		Text pointsText;
+
+		sf::Font font;
+
+		int orangeCount = 0;
+		int pointAdder = 1;
 
 		sf::Clock moveTimer;
 	};

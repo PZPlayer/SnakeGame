@@ -163,6 +163,7 @@
     <ClCompile Include="Math.cpp" />
     <ClCompile Include="Orange.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="TextConfg.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Constans.h" />
@@ -170,6 +171,7 @@
     <ClInclude Include="Math.h" />
     <ClInclude Include="Orange.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="TextConfg.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
