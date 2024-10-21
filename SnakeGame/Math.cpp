@@ -21,3 +21,9 @@ void SnakeGame::SetTextOrigin(sf::Text text, float x, float y)
 	sf::FloatRect textRect = text.getLocalBounds();
 	text.setOrigin(x * textRect.width, y * textRect.height);
 }
+
+void SnakeGame::SetRectangleOrigin(sf::RectangleShape shape, float x, float y)
+{
+	sf::FloatRect shapeRect = shape.getLocalBounds();
+	shape.setOrigin(x * shapeRect.width, y * shapeRect.height);
+}

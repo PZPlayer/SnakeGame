@@ -11,4 +11,5 @@ namespace SnakeGame {
 	struct Game;
 
 	void SetTextOrigin(sf::Text text, float x, float y);
+	void SetRectangleOrigin(sf::RectangleShape shape, float x, float y);
 }
