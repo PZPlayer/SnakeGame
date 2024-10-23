@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\lzhil\\Documents\\GitHub\\SnakeGame\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A571E5E3-403E-4186-804D-8130CE1041E2}|SnakeGame\\ApplesGame.vcxproj|C:\\Users\\lzhil\\Documents\\GitHub\\SnakeGame\\SnakeGame\\GameMain.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A571E5E3-403E-4186-804D-8130CE1041E2}|SnakeGame\\ApplesGame.vcxproj|solutionrelative:SnakeGame\\GameMain.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A571E5E3-403E-4186-804D-8130CE1041E2}|SnakeGame\\ApplesGame.vcxproj|C:\\Users\\lzhil\\Documents\\GitHub\\SnakeGame\\SnakeGame\\Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A571E5E3-403E-4186-804D-8130CE1041E2}|SnakeGame\\ApplesGame.vcxproj|solutionrelative:SnakeGame\\Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -11,12 +15,28 @@
       "RelativeMoniker": "D:0:0:{A571E5E3-403E-4186-804D-8130CE1041E2}|SnakeGame\\ApplesGame.vcxproj|solutionrelative:SnakeGame\\Game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A571E5E3-403E-4186-804D-8130CE1041E2}|SnakeGame\\ApplesGame.vcxproj|C:\\Users\\lzhil\\Documents\\GitHub\\SnakeGame\\SnakeGame\\TextConfg.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A571E5E3-403E-4186-804D-8130CE1041E2}|SnakeGame\\ApplesGame.vcxproj|solutionrelative:SnakeGame\\TextConfg.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A571E5E3-403E-4186-804D-8130CE1041E2}|SnakeGame\\ApplesGame.vcxproj|C:\\Users\\lzhil\\Documents\\GitHub\\SnakeGame\\SnakeGame\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A571E5E3-403E-4186-804D-8130CE1041E2}|SnakeGame\\ApplesGame.vcxproj|solutionrelative:SnakeGame\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A571E5E3-403E-4186-804D-8130CE1041E2}|SnakeGame\\ApplesGame.vcxproj|C:\\Users\\lzhil\\Documents\\GitHub\\SnakeGame\\SnakeGame\\Constans.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A571E5E3-403E-4186-804D-8130CE1041E2}|SnakeGame\\ApplesGame.vcxproj|solutionrelative:SnakeGame\\Constans.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A571E5E3-403E-4186-804D-8130CE1041E2}|SnakeGame\\ApplesGame.vcxproj|C:\\Users\\lzhil\\Documents\\GitHub\\SnakeGame\\SnakeGame\\Button.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A571E5E3-403E-4186-804D-8130CE1041E2}|SnakeGame\\ApplesGame.vcxproj|solutionrelative:SnakeGame\\Button.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A571E5E3-403E-4186-804D-8130CE1041E2}|SnakeGame\\ApplesGame.vcxproj|C:\\Users\\lzhil\\Documents\\GitHub\\SnakeGame\\SnakeGame\\Button.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A571E5E3-403E-4186-804D-8130CE1041E2}|SnakeGame\\ApplesGame.vcxproj|solutionrelative:SnakeGame\\Button.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A571E5E3-403E-4186-804D-8130CE1041E2}|SnakeGame\\ApplesGame.vcxproj|C:\\Users\\lzhil\\Documents\\GitHub\\SnakeGame\\SnakeGame\\Orange.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A571E5E3-403E-4186-804D-8130CE1041E2}|SnakeGame\\ApplesGame.vcxproj|solutionrelative:SnakeGame\\Orange.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A571E5E3-403E-4186-804D-8130CE1041E2}|SnakeGame\\ApplesGame.vcxproj|C:\\Users\\lzhil\\Documents\\GitHub\\SnakeGame\\SnakeGame\\Orange.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A571E5E3-403E-4186-804D-8130CE1041E2}|SnakeGame\\ApplesGame.vcxproj|solutionrelative:SnakeGame\\Orange.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A571E5E3-403E-4186-804D-8130CE1041E2}|SnakeGame\\ApplesGame.vcxproj|C:\\Users\\lzhil\\Documents\\GitHub\\SnakeGame\\SnakeGame\\TextConfg.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A571E5E3-403E-4186-804D-8130CE1041E2}|SnakeGame\\ApplesGame.vcxproj|solutionrelative:SnakeGame\\TextConfg.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A571E5E3-403E-4186-804D-8130CE1041E2}|SnakeGame\\ApplesGame.vcxproj|C:\\Users\\lzhil\\Documents\\GitHub\\SnakeGame\\SnakeGame\\TextConfg.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -31,6 +51,10 @@
       "RelativeMoniker": "D:0:0:{A571E5E3-403E-4186-804D-8130CE1041E2}|SnakeGame\\ApplesGame.vcxproj|solutionrelative:SnakeGame\\Panel.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{A571E5E3-403E-4186-804D-8130CE1041E2}|SnakeGame\\ApplesGame.vcxproj|C:\\Users\\lzhil\\Documents\\GitHub\\SnakeGame\\SnakeGame\\Constans.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A571E5E3-403E-4186-804D-8130CE1041E2}|SnakeGame\\ApplesGame.vcxproj|solutionrelative:SnakeGame\\Constans.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A571E5E3-403E-4186-804D-8130CE1041E2}|SnakeGame\\ApplesGame.vcxproj|C:\\Users\\lzhil\\Documents\\GitHub\\SnakeGame\\SnakeGame\\Math.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A571E5E3-403E-4186-804D-8130CE1041E2}|SnakeGame\\ApplesGame.vcxproj|solutionrelative:SnakeGame\\Math.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -39,24 +63,8 @@
       "RelativeMoniker": "D:0:0:{A571E5E3-403E-4186-804D-8130CE1041E2}|SnakeGame\\ApplesGame.vcxproj|solutionrelative:SnakeGame\\Math.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A571E5E3-403E-4186-804D-8130CE1041E2}|SnakeGame\\ApplesGame.vcxproj|C:\\Users\\lzhil\\Documents\\GitHub\\SnakeGame\\SnakeGame\\GameMain.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A571E5E3-403E-4186-804D-8130CE1041E2}|SnakeGame\\ApplesGame.vcxproj|solutionrelative:SnakeGame\\GameMain.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A571E5E3-403E-4186-804D-8130CE1041E2}|SnakeGame\\ApplesGame.vcxproj|C:\\Users\\lzhil\\Documents\\GitHub\\SnakeGame\\SnakeGame\\Orange.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A571E5E3-403E-4186-804D-8130CE1041E2}|SnakeGame\\ApplesGame.vcxproj|solutionrelative:SnakeGame\\Orange.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A571E5E3-403E-4186-804D-8130CE1041E2}|SnakeGame\\ApplesGame.vcxproj|C:\\Users\\lzhil\\Documents\\GitHub\\SnakeGame\\SnakeGame\\Orange.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A571E5E3-403E-4186-804D-8130CE1041E2}|SnakeGame\\ApplesGame.vcxproj|solutionrelative:SnakeGame\\Orange.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A571E5E3-403E-4186-804D-8130CE1041E2}|SnakeGame\\ApplesGame.vcxproj|C:\\Users\\lzhil\\Documents\\GitHub\\SnakeGame\\SnakeGame\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A571E5E3-403E-4186-804D-8130CE1041E2}|SnakeGame\\ApplesGame.vcxproj|solutionrelative:SnakeGame\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A571E5E3-403E-4186-804D-8130CE1041E2}|SnakeGame\\ApplesGame.vcxproj|C:\\Users\\lzhil\\Documents\\GitHub\\SnakeGame\\SnakeGame\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A571E5E3-403E-4186-804D-8130CE1041E2}|SnakeGame\\ApplesGame.vcxproj|solutionrelative:SnakeGame\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -66,49 +74,60 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
+              "Title": "Button.h",
+              "DocumentMoniker": "C:\\Users\\lzhil\\Documents\\GitHub\\SnakeGame\\SnakeGame\\Button.h",
+              "RelativeDocumentMoniker": "SnakeGame\\Button.h",
+              "ToolTip": "C:\\Users\\lzhil\\Documents\\GitHub\\SnakeGame\\SnakeGame\\Button.h",
+              "RelativeToolTip": "SnakeGame\\Button.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-10-21T20:55:16.983Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "Panel.cpp",
               "DocumentMoniker": "C:\\Users\\lzhil\\Documents\\GitHub\\SnakeGame\\SnakeGame\\Panel.cpp",
               "RelativeDocumentMoniker": "SnakeGame\\Panel.cpp",
               "ToolTip": "C:\\Users\\lzhil\\Documents\\GitHub\\SnakeGame\\SnakeGame\\Panel.cpp",
               "RelativeToolTip": "SnakeGame\\Panel.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAACAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-10-21T16:56:10.271Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-21T16:56:10.271Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 11,
               "Title": "Panel.h",
               "DocumentMoniker": "C:\\Users\\lzhil\\Documents\\GitHub\\SnakeGame\\SnakeGame\\Panel.h",
               "RelativeDocumentMoniker": "SnakeGame\\Panel.h",
               "ToolTip": "C:\\Users\\lzhil\\Documents\\GitHub\\SnakeGame\\SnakeGame\\Panel.h",
               "RelativeToolTip": "SnakeGame\\Panel.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAA4AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-10-21T16:52:51.22Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-21T16:52:51.22Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 7,
               "Title": "Orange.cpp",
               "DocumentMoniker": "C:\\Users\\lzhil\\Documents\\GitHub\\SnakeGame\\SnakeGame\\Orange.cpp",
               "RelativeDocumentMoniker": "SnakeGame\\Orange.cpp",
               "ToolTip": "C:\\Users\\lzhil\\Documents\\GitHub\\SnakeGame\\SnakeGame\\Orange.cpp",
               "RelativeToolTip": "SnakeGame\\Orange.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAkAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-10-16T18:54:31.485Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 12,
               "Title": "Constans.h",
               "DocumentMoniker": "C:\\Users\\lzhil\\Documents\\GitHub\\SnakeGame\\SnakeGame\\Constans.h",
               "RelativeDocumentMoniker": "SnakeGame\\Constans.h",
@@ -116,12 +135,11 @@
               "RelativeToolTip": "SnakeGame\\Constans.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-10-14T15:43:17.732Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-14T15:43:17.732Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 6,
               "Title": "Orange.h",
               "DocumentMoniker": "C:\\Users\\lzhil\\Documents\\GitHub\\SnakeGame\\SnakeGame\\Orange.h",
               "RelativeDocumentMoniker": "SnakeGame\\Orange.h",
@@ -129,30 +147,31 @@
               "RelativeToolTip": "SnakeGame\\Orange.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-10-14T15:20:28.521Z"
+              "WhenOpened": "2024-10-14T15:20:28.521Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Game.cpp",
               "DocumentMoniker": "C:\\Users\\lzhil\\Documents\\GitHub\\SnakeGame\\SnakeGame\\Game.cpp",
               "RelativeDocumentMoniker": "SnakeGame\\Game.cpp",
               "ToolTip": "C:\\Users\\lzhil\\Documents\\GitHub\\SnakeGame\\SnakeGame\\Game.cpp",
               "RelativeToolTip": "SnakeGame\\Game.cpp",
-              "ViewState": "AgIAAEkAAAAAAAAAAAAiwGsAAAA3AAAAAAAAAA==",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAAAFUAAACpAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-10-14T14:17:35.246Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Game.h",
               "DocumentMoniker": "C:\\Users\\lzhil\\Documents\\GitHub\\SnakeGame\\SnakeGame\\Game.h",
               "RelativeDocumentMoniker": "SnakeGame\\Game.h",
               "ToolTip": "C:\\Users\\lzhil\\Documents\\GitHub\\SnakeGame\\SnakeGame\\Game.h",
               "RelativeToolTip": "SnakeGame\\Game.h",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAADIAAAATAAAAAAAAAA==",
+              "ViewState": "AgIAACQAAAAAAAAAAAAgwEcAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-10-14T14:14:17.348Z",
               "EditorCaption": ""
@@ -161,37 +180,48 @@
         },
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
+              "Title": "Button.cpp",
+              "DocumentMoniker": "C:\\Users\\lzhil\\Documents\\GitHub\\SnakeGame\\SnakeGame\\Button.cpp",
+              "RelativeDocumentMoniker": "SnakeGame\\Button.cpp",
+              "ToolTip": "C:\\Users\\lzhil\\Documents\\GitHub\\SnakeGame\\SnakeGame\\Button.cpp",
+              "RelativeToolTip": "SnakeGame\\Button.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-10-21T21:00:01.892Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "TextConfg.cpp",
               "DocumentMoniker": "C:\\Users\\lzhil\\Documents\\GitHub\\SnakeGame\\SnakeGame\\TextConfg.cpp",
               "RelativeDocumentMoniker": "SnakeGame\\TextConfg.cpp",
               "ToolTip": "C:\\Users\\lzhil\\Documents\\GitHub\\SnakeGame\\SnakeGame\\TextConfg.cpp",
               "RelativeToolTip": "SnakeGame\\TextConfg.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-10-19T19:14:02.685Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-19T19:14:02.685Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
               "Title": "TextConfg.h",
               "DocumentMoniker": "C:\\Users\\lzhil\\Documents\\GitHub\\SnakeGame\\SnakeGame\\TextConfg.h",
               "RelativeDocumentMoniker": "SnakeGame\\TextConfg.h",
               "ToolTip": "C:\\Users\\lzhil\\Documents\\GitHub\\SnakeGame\\SnakeGame\\TextConfg.h",
               "RelativeToolTip": "SnakeGame\\TextConfg.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAPAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-10-19T19:09:57.7Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-19T19:09:57.7Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 14,
               "Title": "Math.h",
               "DocumentMoniker": "C:\\Users\\lzhil\\Documents\\GitHub\\SnakeGame\\SnakeGame\\Math.h",
               "RelativeDocumentMoniker": "SnakeGame\\Math.h",
@@ -199,12 +229,11 @@
               "RelativeToolTip": "SnakeGame\\Math.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-10-14T15:40:17.677Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-14T15:40:17.677Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 13,
               "Title": "Math.cpp",
               "DocumentMoniker": "C:\\Users\\lzhil\\Documents\\GitHub\\SnakeGame\\SnakeGame\\Math.cpp",
               "RelativeDocumentMoniker": "SnakeGame\\Math.cpp",
@@ -212,12 +241,11 @@
               "RelativeToolTip": "SnakeGame\\Math.cpp",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-10-14T15:40:02.891Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-14T15:40:02.891Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 3,
               "Title": "Player.h",
               "DocumentMoniker": "C:\\Users\\lzhil\\Documents\\GitHub\\SnakeGame\\SnakeGame\\Player.h",
               "RelativeDocumentMoniker": "SnakeGame\\Player.h",
@@ -225,11 +253,12 @@
               "RelativeToolTip": "SnakeGame\\Player.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-10-14T15:03:25.562Z"
+              "WhenOpened": "2024-10-14T15:03:25.562Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 15,
               "Title": "Player.cpp",
               "DocumentMoniker": "C:\\Users\\lzhil\\Documents\\GitHub\\SnakeGame\\SnakeGame\\Player.cpp",
               "RelativeDocumentMoniker": "SnakeGame\\Player.cpp",
@@ -241,13 +270,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 0,
               "Title": "GameMain.cpp",
               "DocumentMoniker": "C:\\Users\\lzhil\\Documents\\GitHub\\SnakeGame\\SnakeGame\\GameMain.cpp",
               "RelativeDocumentMoniker": "SnakeGame\\GameMain.cpp",
               "ToolTip": "C:\\Users\\lzhil\\Documents\\GitHub\\SnakeGame\\SnakeGame\\GameMain.cpp",
               "RelativeToolTip": "SnakeGame\\GameMain.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAA9AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-10-09T20:03:59.408Z",
               "EditorCaption": ""

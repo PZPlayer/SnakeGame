@@ -2,7 +2,7 @@
 #include "Game.h"
 
 namespace SnakeGame {
-	void InitText(Text text) {
+	void InitText(Text& text) {
 		text.text.setFont(text.font);
 		text.text.setFillColor(text.textColor);
 		text.text.setCharacterSize(text.textSize);

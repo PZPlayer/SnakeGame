@@ -4,7 +4,13 @@
 namespace SnakeGame {
 
 	void Start(Game& game) {
+		game.ifDead = false;
+		game.saveTimer.restart();
+		game.direction = PlayerDirection::right;
 		game.player.snakeHead = { numRows / 2, numCols / 2 };
+		game.player.bodyLenght = 3;
+		game.player.snakeBody.clear();
+		game.player.snakeParts.clear();
 		InitOrange(game.orange);
 		game.pointsText.position = {screenX / 2, 50};
 		assert(game.font.loadFromFile("Resources/Fonts/Roboto-Bold.ttf"));
@@ -13,6 +19,10 @@ namespace SnakeGame {
         #pragma region BodyCreate
 		InitPlayer(game.player);
 #pragma endregion
+	}
+
+	void Restart(Button& button, Game& game) {
+		Start(game);
 	}
 
 	void StartMenu(Game& game) {
@@ -33,10 +43,11 @@ namespace SnakeGame {
 		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
 			game.direction = PlayerDirection::down;
 		}
-
+		game.mousePos = sf::Mouse::getPosition(window);
+		game.isMouseClicked = sf::Mouse::isButtonPressed(sf::Mouse::Left);
     #pragma endregion
         #pragma region Movement
-		if (game.moveTimer.getElapsedTime().asSeconds() >= game.delay)
+		if (game.moveTimer.getElapsedTime().asSeconds() >= game.delay && !game.ifDead)
 		{
 			sf::Vector2i lastHeadPos = game.player.snakeHead;
 			switch (game.direction)
@@ -72,7 +83,7 @@ namespace SnakeGame {
 #pragma endregion
         #pragma region CheckIfDeath
 		for (int i = 0; i < game.player.snakeBody.size(); ++i) {
-			if (game.player.snakeBody[i].x == game.player.snakeHead.x && game.player.snakeBody[i].y == game.player.snakeHead.y) {
+			if (game.player.snakeBody[i].x == game.player.snakeHead.x && game.player.snakeBody[i].y == game.player.snakeHead.y && game.saveTimer.getElapsedTime().asSeconds() >= 1) {
 				GameOver(window, game);
 			}
 		}
@@ -105,6 +116,7 @@ namespace SnakeGame {
 	}
 
 	void GameOver(sf::RenderWindow& window, Game& game) {
+		game.ifDead = true;
 		if (game.bestScore == 0) game.enemies[2] = { game.bestScore, "<YOU>" };
 		for (size_t i = 0; i < sizeof(game.enemies) / sizeof(game.enemies[0]); ++i) {
 			if (game.enemies[i].Name == "<YOU>") {
@@ -136,7 +148,18 @@ namespace SnakeGame {
 		}
 		game.DeathText[1].textColor = sf::Color::Green;
 		game.DeathText[1].position = { screenX / 2 , screenY / 2 - 100};
+
+		game.deathButtons[0].pos = { screenX / 2, screenY / 2};
+		game.deathButtons[0].size = { 150, 75 };
+		game.deathButtons[0].textSize = 30;
+		game.deathButtons[0].text = "Try Again";
+
+		game.deathButtons[1].pos = { screenX / 2, screenY / 2 + 90};
+		game.deathButtons[1].size = { 150, 75 };
+		game.deathButtons[1].textSize = 30;
+		game.deathButtons[1].text = "Menu";
 		
+		for (int i = 0; i < sizeof(game.deathButtons) / sizeof(game.deathButtons[0]); ++i) InitButton(game.deathButtons[i], game);
 		for (int i = 0; i < sizeof(game.deathPanels) / sizeof(game.deathPanels[0]); ++i) InitPanel(game.deathPanels[i], game);
 		for (int i = 0; i < sizeof(game.DeathText) / sizeof(game.DeathText[0]); ++i) InitText(game.DeathText[i]);
 
@@ -144,12 +167,26 @@ namespace SnakeGame {
 	}
 
 	void Draw(Game& game, sf::RenderWindow& window) {
-		for (int i = 0; i < sizeof(game.deathPanels) / sizeof(game.deathPanels[0]); ++i) DrawPanel(game.deathPanels[i], window);
-		for (int i = 0; i < sizeof(game.DeathText) / sizeof(game.DeathText[0]); ++i) DrawText(window, game.DeathText[i]);
 		DrawOrange(window, game.orange);
 		DrawText(window, game.pointsText);
         #pragma region BodyDraw
 		DrawPlayer(window, game.player);
 #pragma endregion
+
+		if (game.ifDead) {
+			for (int i = 0; i < sizeof(game.deathPanels) / sizeof(game.deathPanels[0]); ++i) DrawPanel(game.deathPanels[i], window);
+			for (int i = 0; i < sizeof(game.DeathText) / sizeof(game.DeathText[0]); ++i) DrawText(window, game.DeathText[i]);
+			for (int i = 0; i < sizeof(game.deathButtons) / sizeof(game.deathButtons[0]); ++i) DrawButton(window, game.deathButtons[i]);
+		}
+
+        #pragma region ButtonCheck
+		IfPoint(game.deathButtons[0], game, { (float)game.mousePos.x, (float)game.mousePos.y }, game.isMouseClicked, [=](Button& button, Game& game) {
+			Restart(game.deathButtons[0], game);
+			});
+
+#pragma endregion
+
+		
+
 	}
 }

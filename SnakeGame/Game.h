@@ -2,12 +2,14 @@
 #include <SFML/Graphics.hpp>
 #include <cstdlib>
 #include <vector>
+#include <functional>
 #include "Constans.h"
 #include "Player.h"
 #include "TextConfg.h"
 #include "Orange.h"
 #include "Math.h"
 #include "Panel.h"
+#include "Button.h"
 
 namespace SnakeGame {
 	enum class PlayerDirection
@@ -44,7 +46,13 @@ namespace SnakeGame {
 
 		Panel deathPanels[4];
 
+		Button deathButtons[2];
+
 		float delay = 0.2f;
+
+		sf::Vector2i mousePos;
+		bool isMouseClicked;
+		bool ifDead = false;
 
 		Enemy enemies[3];
 
@@ -61,9 +69,11 @@ namespace SnakeGame {
 		int pointAdder = 1;
 
 		sf::Clock moveTimer;
+		sf::Clock saveTimer;
 	};
 
 	void Start(Game& game);
+	void Restart(Button& , Game& game);
 	void StartMenu(Game& game);
 	void Update(Game& game, float deltaTime, sf::RenderWindow& window);
 	void GameOver(sf::RenderWindow& window, Game& game);

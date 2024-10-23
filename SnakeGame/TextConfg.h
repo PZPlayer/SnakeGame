@@ -17,6 +17,6 @@ namespace SnakeGame {
 
 	struct Game;
 
-	void InitText(Text text);
+	void InitText(Text& text);
 	void DrawText(sf::RenderWindow& window, Text& text);
 }
