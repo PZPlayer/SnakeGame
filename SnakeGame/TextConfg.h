@@ -12,7 +12,7 @@ namespace SnakeGame {
 		int textSize = 30;
 		sf::Font font;
 		sf::Vector2i position = {0, 0};
-		std::string strText = "Text";
+		std::string strText = "";
 	};
 
 	struct Game;

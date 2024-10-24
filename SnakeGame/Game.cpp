@@ -4,7 +4,9 @@
 namespace SnakeGame {
 
 	void Start(Game& game) {
+		if (game.bestScore == 0) game.enemies[2] = { game.bestScore, "<YOU>" };
 		game.ifDead = false;
+		game.orangeCount = 0;
 		game.saveTimer.restart();
 		game.direction = PlayerDirection::right;
 		game.player.snakeHead = { numRows / 2, numCols / 2 };
@@ -19,10 +21,47 @@ namespace SnakeGame {
         #pragma region BodyCreate
 		InitPlayer(game.player);
 #pragma endregion
+        #pragma region PauseMenuInit
+		game.pausePanels[0].pos = { screenX / 2, screenY / 2 };
+		game.pausePanels[0].size = { 300, 400 };
+
+		game.pausePanels[1].pos = { screenX / 2, screenY / 2 };
+		game.pausePanels[1].size = { 270, 370 };
+		game.pausePanels[1].color = sf::Color::Black;
+
+		game.pauseText.position = { screenX / 2, screenY / 2 - 160 };
+		game.pauseText.font = game.font;
+		game.pauseText.textSize = 20;
+		game.pauseText.strText = "Paused";
+
+		game.pauseButtons[0].pos = { screenX / 2, screenY / 2 };
+		game.pauseButtons[0].size = { 150, 75 };
+		game.pauseButtons[0].textSize = 30;
+		game.pauseButtons[0].text = "Continue";
+
+		game.pauseButtons[1].pos = { screenX / 2, screenY / 2 + 90 };
+		game.pauseButtons[1].size = { 150, 75 };
+		game.pauseButtons[1].textSize = 30;
+		game.pauseButtons[1].text = "Menu";
+
+		for (int i = 0; i < sizeof(game.pausePanels) / sizeof(game.pausePanels[0]); ++i) InitPanel(game.pausePanels[i], game);
+		for (int i = 0; i < sizeof(game.pauseButtons) / sizeof(game.pauseButtons[0]); ++i) InitButton(game.pauseButtons[i], game);
+		InitText(game.pauseText);
+#pragma endregion
+
 	}
 
 	void Restart(Button& button, Game& game) {
-		Start(game);
+		if (game.ifDead) {
+			Start(game);
+			game.DeathText[1].strText = "";
+		}
+	}
+
+	void Continue(Button& button, Game& game) {
+		if (!game.ifDead) {
+			game.ifPaused = false;
+		}
 	}
 
 	void StartMenu(Game& game) {
@@ -43,11 +82,15 @@ namespace SnakeGame {
 		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
 			game.direction = PlayerDirection::down;
 		}
+
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
+			game.ifPaused = !game.ifPaused;
+		}
 		game.mousePos = sf::Mouse::getPosition(window);
 		game.isMouseClicked = sf::Mouse::isButtonPressed(sf::Mouse::Left);
     #pragma endregion
         #pragma region Movement
-		if (game.moveTimer.getElapsedTime().asSeconds() >= game.delay && !game.ifDead)
+		if (game.moveTimer.getElapsedTime().asSeconds() >= game.delay && !game.ifDead && !game.ifPaused)
 		{
 			sf::Vector2i lastHeadPos = game.player.snakeHead;
 			switch (game.direction)
@@ -83,7 +126,7 @@ namespace SnakeGame {
 #pragma endregion
         #pragma region CheckIfDeath
 		for (int i = 0; i < game.player.snakeBody.size(); ++i) {
-			if (game.player.snakeBody[i].x == game.player.snakeHead.x && game.player.snakeBody[i].y == game.player.snakeHead.y && game.saveTimer.getElapsedTime().asSeconds() >= 1) {
+			if (game.player.snakeBody[i].x == game.player.snakeHead.x && game.player.snakeBody[i].y == game.player.snakeHead.y && game.saveTimer.getElapsedTime().asSeconds() >= 1 && !game.ifDead) {
 				GameOver(window, game);
 			}
 		}
@@ -116,8 +159,9 @@ namespace SnakeGame {
 	}
 
 	void GameOver(sf::RenderWindow& window, Game& game) {
+		if (game.orangeCount > game.bestScore) game.bestScore = game.orangeCount;
+
 		game.ifDead = true;
-		if (game.bestScore == 0) game.enemies[2] = { game.bestScore, "<YOU>" };
 		for (size_t i = 0; i < sizeof(game.enemies) / sizeof(game.enemies[0]); ++i) {
 			if (game.enemies[i].Name == "<YOU>") {
 				game.enemies[i] = { game.bestScore, "<YOU>" };
@@ -140,12 +184,11 @@ namespace SnakeGame {
 
 		game.DeathText[1].font = game.font;
 		game.DeathText[1].textSize = 14;
-		if (game.playerState != PlayerState::Dead) {
-			game.DeathText[1].strText = "";
-			for (int i = 0; i < sizeof(game.enemies) / sizeof(game.enemies[0]); i++) {
-				game.DeathText[1].strText = game.DeathText[1].strText + std::to_string(i + 1) + ".  |" + game.enemies[i].Name + "|  SCORE:" + std::to_string(game.enemies[i].Score) + "\n ";
-			}
+		
+		for (int i = 0; i < sizeof(game.enemies) / sizeof(game.enemies[0]); i++) {
+			game.DeathText[1].strText = game.DeathText[1].strText + std::to_string(i + 1) + ".  |" + game.enemies[i].Name + "|  SCORE:" + std::to_string(game.enemies[i].Score) + "\n ";
 		}
+		
 		game.DeathText[1].textColor = sf::Color::Green;
 		game.DeathText[1].position = { screenX / 2 , screenY / 2 - 100};
 
@@ -179,9 +222,18 @@ namespace SnakeGame {
 			for (int i = 0; i < sizeof(game.deathButtons) / sizeof(game.deathButtons[0]); ++i) DrawButton(window, game.deathButtons[i]);
 		}
 
+		if (game.ifPaused) {
+			for (int i = 0; i < sizeof(game.pausePanels) / sizeof(game.pausePanels[0]); ++i) DrawPanel(game.pausePanels[i], window);
+			for (int i = 0; i < sizeof(game.pauseButtons) / sizeof(game.pauseButtons[0]); ++i) DrawButton(window, game.pauseButtons[i]);
+			DrawText(window, game.pauseText);
+		}
+
         #pragma region ButtonCheck
 		IfPoint(game.deathButtons[0], game, { (float)game.mousePos.x, (float)game.mousePos.y }, game.isMouseClicked, [=](Button& button, Game& game) {
 			Restart(game.deathButtons[0], game);
+			});
+		IfPoint(game.pauseButtons[0], game, { (float)game.mousePos.x, (float)game.mousePos.y }, game.isMouseClicked, [=](Button& button, Game& game) {
+			Continue(game.pauseButtons[0], game);
 			});
 
 #pragma endregion

@@ -45,14 +45,17 @@ namespace SnakeGame {
 		PlayerState playerState = PlayerState::Idle;
 
 		Panel deathPanels[4];
+		Panel pausePanels[2];
 
 		Button deathButtons[2];
+		Button pauseButtons[2];
 
 		float delay = 0.2f;
 
 		sf::Vector2i mousePos;
 		bool isMouseClicked;
 		bool ifDead = false;
+		bool ifPaused = false;
 
 		Enemy enemies[3];
 
@@ -61,6 +64,7 @@ namespace SnakeGame {
 		Player player;
 		Orange orange;
 		Text pointsText;
+		Text pauseText;
 		Text DeathText[2];
 
 		sf::Font font;
