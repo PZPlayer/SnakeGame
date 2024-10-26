@@ -11,7 +11,7 @@ namespace SnakeGame
 		sf::Vector2f pos;
 		sf::Vector2f size;
 		std::string text;
-		int textSize;
+		int textSize = 16;
 		sf::Color baseColor = sf::Color::Color(225, 225, 225);
 		sf::Color baseTextColor = sf::Color::Black;
 		sf::Color higlightedColor = sf::Color::White;

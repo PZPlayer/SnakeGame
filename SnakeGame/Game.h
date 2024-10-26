@@ -41,7 +41,7 @@ namespace SnakeGame {
 
 	struct Game {
 		PlayerDirection direction = PlayerDirection::right;
-		GameState gameState = GameState::Game;
+		GameState gameState = GameState::Menu;
 		PlayerState playerState = PlayerState::Idle;
 
 		Panel deathPanels[4];
@@ -53,7 +53,7 @@ namespace SnakeGame {
 		float delay = 0.2f;
 
 		sf::Vector2i mousePos;
-		bool isMouseClicked;
+		bool isMouseClicked = false;
 		bool ifDead = false;
 		bool ifPaused = false;
 
@@ -64,6 +64,7 @@ namespace SnakeGame {
 		Player player;
 		Orange orange;
 		Text pointsText;
+		Text menuText;
 		Text pauseText;
 		Text DeathText[2];
 
@@ -77,6 +78,7 @@ namespace SnakeGame {
 	};
 
 	void Start(Game& game);
+	void Menu(Game& game);
 	void Restart(Button& , Game& game);
 	void StartMenu(Game& game);
 	void Update(Game& game, float deltaTime, sf::RenderWindow& window);

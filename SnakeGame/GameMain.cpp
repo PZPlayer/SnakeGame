@@ -14,7 +14,7 @@ int main() {
 	PlayerDirection direction = PlayerDirection::right;
 
 	Game game;
-	game.gameState == GameState::Game ? Start(game): Start(game);
+	game.gameState == GameState::Game ? Start(game) : Menu(game);
 
 	sf::Clock gameClock;
 	float lastTime = gameClock.getElapsedTime().asSeconds();

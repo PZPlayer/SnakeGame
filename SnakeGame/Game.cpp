@@ -51,6 +51,13 @@ namespace SnakeGame {
 
 	}
 
+	void Menu(Game& game) {
+		game.menuText.strText = "Snake Game";
+		game.menuText.textSize = 50;
+		game.menuText.position = {screenX / 2, screenY / 4};
+		InitText(game.menuText);
+	}
+
 	void Restart(Button& button, Game& game) {
 		if (game.ifDead) {
 			Start(game);
@@ -215,6 +222,10 @@ namespace SnakeGame {
         #pragma region BodyDraw
 		DrawPlayer(window, game.player);
 #pragma endregion
+
+		if (game.gameState == GameState::Menu) {
+			DrawText(window, game.menuText);
+		}
 
 		if (game.ifDead) {
 			for (int i = 0; i < sizeof(game.deathPanels) / sizeof(game.deathPanels[0]); ++i) DrawPanel(game.deathPanels[i], window);
