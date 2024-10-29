@@ -34,6 +34,22 @@ namespace SnakeGame {
 		Paused = 2
 	};
 
+	enum class MenuState
+	{
+		Menu = 0,
+		Settings = 1,
+		Difficulty = 2
+	};
+
+	enum class Difficulty
+	{
+		Easy = 0,
+		EasyPlus = 1,
+		Normal = 2,
+		NormalPlus = 3,
+		Hard = 4
+	};
+
 	struct Enemy {
 		int Score = rand() % 77;
 		std::string Name = Names[rand() % 10];
@@ -43,14 +59,21 @@ namespace SnakeGame {
 		PlayerDirection direction = PlayerDirection::right;
 		GameState gameState = GameState::Menu;
 		PlayerState playerState = PlayerState::Idle;
+		MenuState menuState = MenuState::Menu;
+		Difficulty gameDifficulty = Difficulty::Normal;
 
 		Panel deathPanels[4];
 		Panel pausePanels[2];
 
 		Button deathButtons[2];
 		Button pauseButtons[2];
+		Button menuButtons[4];
+		Button menuDifficultyButtons[5];
+
+		float dealyDifficulty[5] = {0.2f, 0.1f, 0.05f, 0.025f, 0.015f};
 
 		float delay = 0.2f;
+		float clickDelay = 0.1f;
 
 		sf::Vector2i mousePos;
 		bool isMouseClicked = false;
@@ -61,19 +84,25 @@ namespace SnakeGame {
 
 		int bestScore = 0;
 
+		bool ifGoing = true;
+
 		Player player;
 		Orange orange;
 		Text pointsText;
 		Text menuText;
+		Text menuDifficultyText;
 		Text pauseText;
 		Text DeathText[2];
 
 		sf::Font font;
 
+		int pointsDifficulty[5] = { 2, 4, 6, 8, 10 };
+
 		int orangeCount = 0;
-		int pointAdder = 1;
+		int pointAdder = 2;
 
 		sf::Clock moveTimer;
+		sf::Clock clickTimer;
 		sf::Clock saveTimer;
 	};
 

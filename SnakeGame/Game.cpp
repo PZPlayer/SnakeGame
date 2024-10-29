@@ -4,6 +4,9 @@
 namespace SnakeGame {
 
 	void Start(Game& game) {
+		game.delay = game.dealyDifficulty[(int)game.gameDifficulty];
+		game.pointAdder = game.pointsDifficulty[(int)game.gameDifficulty];
+
 		if (game.bestScore == 0) game.enemies[2] = { game.bestScore, "<YOU>" };
 		game.ifDead = false;
 		game.orangeCount = 0;
@@ -52,10 +55,73 @@ namespace SnakeGame {
 	}
 
 	void Menu(Game& game) {
+		assert(game.font.loadFromFile("Resources/Fonts/Roboto-Bold.ttf"));
+#pragma region MenuMain
 		game.menuText.strText = "Snake Game";
 		game.menuText.textSize = 50;
-		game.menuText.position = {screenX / 2, screenY / 4};
+		game.menuText.font = game.font;
+		game.menuText.position = { screenX / 2, screenY / 4 };
 		InitText(game.menuText);
+
+		game.menuButtons[0].pos = { screenX / 2, screenY / 2 - 100 };
+		game.menuButtons[0].size = { 150, 75 };
+		game.menuButtons[0].textSize = 30;
+		game.menuButtons[0].text = "Play";
+
+		game.menuButtons[1].pos = { screenX / 2, screenY / 2 };
+		game.menuButtons[1].size = { 150, 75 };
+		game.menuButtons[1].textSize = 30;
+		game.menuButtons[1].text = "Difficulty";
+
+		game.menuButtons[2].pos = { screenX / 2, screenY / 2 + 100 };
+		game.menuButtons[2].size = { 150, 75 };
+		game.menuButtons[2].textSize = 30;
+		game.menuButtons[2].text = "Settings";
+
+		game.menuButtons[3].pos = { screenX / 2, screenY / 2 + 200 };
+		game.menuButtons[3].size = { 150, 75 };
+		game.menuButtons[3].textSize = 30;
+		game.menuButtons[3].text = "Exit";
+
+		for (int i = 0; i < sizeof(game.menuButtons) / sizeof(game.menuButtons[0]); ++i) InitButton(game.menuButtons[i], game);
+#pragma endregion
+
+        #pragma region Difficulty
+		game.menuDifficultyText.strText = "Difficulty";
+		game.menuDifficultyText.textSize = 50;
+		game.menuDifficultyText.font = game.font;
+		game.menuDifficultyText.textColor = sf::Color::Red;
+		game.menuDifficultyText.position = { screenX / 2, screenY / 4 };
+		InitText(game.menuDifficultyText);
+
+		game.menuDifficultyButtons[0].pos = { screenX / 2, screenY / 2 - 100 };
+		game.menuDifficultyButtons[0].size = { 150, 75 };
+		game.menuDifficultyButtons[0].textSize = 30;
+		game.menuDifficultyButtons[0].text = "Easy";
+
+		game.menuDifficultyButtons[1].pos = { screenX / 2, screenY / 2 };
+		game.menuDifficultyButtons[1].size = { 150, 75 };
+		game.menuDifficultyButtons[1].textSize = 30;
+		game.menuDifficultyButtons[1].text = "Easy+";
+
+		game.menuDifficultyButtons[2].pos = { screenX / 2, screenY / 2 + 100 };
+		game.menuDifficultyButtons[2].size = { 150, 75 };
+		game.menuDifficultyButtons[2].textSize = 30;
+		game.menuDifficultyButtons[2].text = "Normal";
+
+		game.menuDifficultyButtons[3].pos = { screenX / 2, screenY / 2 + 200 };
+		game.menuDifficultyButtons[3].size = { 150, 75 };
+		game.menuDifficultyButtons[3].textSize = 30;
+		game.menuDifficultyButtons[3].text = "Normal+";
+
+		game.menuDifficultyButtons[4].pos = { screenX / 2, screenY / 2 + 300 };
+		game.menuDifficultyButtons[4].size = { 150, 75 };
+		game.menuDifficultyButtons[4].textSize = 30;
+		game.menuDifficultyButtons[4].text = "Hard";
+
+		for (int i = 0; i < sizeof(game.menuDifficultyButtons) / sizeof(game.menuDifficultyButtons[0]); ++i) InitButton(game.menuDifficultyButtons[i], game);
+#pragma endregion
+		
 	}
 
 	void Restart(Button& button, Game& game) {
@@ -63,6 +129,53 @@ namespace SnakeGame {
 			Start(game);
 			game.DeathText[1].strText = "";
 		}
+	}
+
+	void PlayGame(Button& button, Game& game) {
+		game.gameState = GameState::Game;
+		Start(game);
+	}
+
+	void CloseGame(Button& button, Game& game) {
+		game.ifGoing = false;
+	}
+
+	void ChooseDificulty(Button& button, Game& game) {
+		game.menuState = MenuState::Difficulty;
+		Menu(game);
+	}
+
+	void DificultyEasy(Button& button, Game& game) {
+		game.gameDifficulty = Difficulty::Easy;
+		PlayGame(button, game);
+	}
+
+	void DificultyEasyPlus(Button& button, Game& game) {
+		game.gameDifficulty = Difficulty::EasyPlus;
+		PlayGame(button, game);
+	}
+
+	void DificultyNormal(Button& button, Game& game) {
+		game.gameDifficulty = Difficulty::Normal;
+		PlayGame(button, game);
+	}
+
+	void DificultyNormalPlus(Button& button, Game& game) {
+		game.gameDifficulty = Difficulty::NormalPlus;
+		PlayGame(button, game);
+	}
+
+	void DificultyHard(Button& button, Game& game) {
+		game.gameDifficulty = Difficulty::Hard;
+		PlayGame(button, game);
+	}
+
+	
+
+	void GoToMenu(Button& button, Game& game) {
+		game.gameState = GameState::Menu;
+		game.menuState = MenuState::Menu;
+		Menu(game);
 	}
 
 	void Continue(Button& button, Game& game) {
@@ -93,8 +206,6 @@ namespace SnakeGame {
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
 			game.ifPaused = !game.ifPaused;
 		}
-		game.mousePos = sf::Mouse::getPosition(window);
-		game.isMouseClicked = sf::Mouse::isButtonPressed(sf::Mouse::Left);
     #pragma endregion
         #pragma region Movement
 		if (game.moveTimer.getElapsedTime().asSeconds() >= game.delay && !game.ifDead && !game.ifPaused)
@@ -217,39 +328,100 @@ namespace SnakeGame {
 	}
 
 	void Draw(Game& game, sf::RenderWindow& window) {
-		DrawOrange(window, game.orange);
-		DrawText(window, game.pointsText);
-        #pragma region BodyDraw
-		DrawPlayer(window, game.player);
-#pragma endregion
+		game.mousePos = sf::Mouse::getPosition(window);
+		if (game.clickTimer.getElapsedTime().asSeconds() >= game.clickDelay) {
+			game.isMouseClicked = sf::Mouse::isButtonPressed(sf::Mouse::Left);
+			game.clickTimer.restart();
+		}
+		else
+		{
+			game.isMouseClicked = false;
+		}
+		if (!game.ifGoing) {
+			window.close();
+		}
 
 		if (game.gameState == GameState::Menu) {
 			DrawText(window, game.menuText);
-		}
+			if (game.menuState == MenuState::Menu) {
+				for (int i = 0; i < sizeof(game.menuButtons) / sizeof(game.menuButtons[0]); ++i) DrawButton(window, game.menuButtons[i]);
+                #pragma region ButtonCheck
+				IfPoint(game.menuButtons[0], game, { (float)game.mousePos.x, (float)game.mousePos.y }, game.isMouseClicked, [=](Button& button, Game& game) {
+					PlayGame(game.menuButtons[0], game);
+					});
 
-		if (game.ifDead) {
-			for (int i = 0; i < sizeof(game.deathPanels) / sizeof(game.deathPanels[0]); ++i) DrawPanel(game.deathPanels[i], window);
-			for (int i = 0; i < sizeof(game.DeathText) / sizeof(game.DeathText[0]); ++i) DrawText(window, game.DeathText[i]);
-			for (int i = 0; i < sizeof(game.deathButtons) / sizeof(game.deathButtons[0]); ++i) DrawButton(window, game.deathButtons[i]);
-		}
+				IfPoint(game.menuButtons[3], game, { (float)game.mousePos.x, (float)game.mousePos.y }, game.isMouseClicked, [=](Button& button, Game& game) {
+					CloseGame(game.menuButtons[3], game);
+					});
 
-		if (game.ifPaused) {
-			for (int i = 0; i < sizeof(game.pausePanels) / sizeof(game.pausePanels[0]); ++i) DrawPanel(game.pausePanels[i], window);
-			for (int i = 0; i < sizeof(game.pauseButtons) / sizeof(game.pauseButtons[0]); ++i) DrawButton(window, game.pauseButtons[i]);
-			DrawText(window, game.pauseText);
-		}
-
-        #pragma region ButtonCheck
-		IfPoint(game.deathButtons[0], game, { (float)game.mousePos.x, (float)game.mousePos.y }, game.isMouseClicked, [=](Button& button, Game& game) {
-			Restart(game.deathButtons[0], game);
-			});
-		IfPoint(game.pauseButtons[0], game, { (float)game.mousePos.x, (float)game.mousePos.y }, game.isMouseClicked, [=](Button& button, Game& game) {
-			Continue(game.pauseButtons[0], game);
-			});
+				IfPoint(game.menuButtons[1], game, { (float)game.mousePos.x, (float)game.mousePos.y }, game.isMouseClicked, [=](Button& button, Game& game) {
+					ChooseDificulty(game.menuButtons[1], game);
+					});
 
 #pragma endregion
+			}
+			else if (game.menuState == MenuState::Settings) {
 
-		
+			}
+			else
+			{
+				for (int i = 0; i < sizeof(game.menuDifficultyButtons) / sizeof(game.menuDifficultyButtons[0]); ++i) DrawButton(window, game.menuDifficultyButtons[i]);
 
+				IfPoint(game.menuDifficultyButtons[0], game, { (float)game.mousePos.x, (float)game.mousePos.y }, game.isMouseClicked, [=](Button& button, Game& game) {
+					DificultyEasy(game.menuDifficultyButtons[0], game);
+					});
+
+				IfPoint(game.menuDifficultyButtons[1], game, { (float)game.mousePos.x, (float)game.mousePos.y }, game.isMouseClicked, [=](Button& button, Game& game) {
+					DificultyEasyPlus(game.menuDifficultyButtons[1], game);
+					});
+
+				IfPoint(game.menuDifficultyButtons[2], game, { (float)game.mousePos.x, (float)game.mousePos.y }, game.isMouseClicked, [=](Button& button, Game& game) {
+					DificultyNormal(game.menuDifficultyButtons[2], game);
+					});
+
+				IfPoint(game.menuDifficultyButtons[3], game, { (float)game.mousePos.x, (float)game.mousePos.y }, game.isMouseClicked, [=](Button& button, Game& game) {
+					DificultyNormalPlus(game.menuDifficultyButtons[3], game);
+					});
+
+				IfPoint(game.menuDifficultyButtons[4], game, { (float)game.mousePos.x, (float)game.mousePos.y }, game.isMouseClicked, [=](Button& button, Game& game) {
+					DificultyHard(game.menuDifficultyButtons[4], game);
+					});
+			}
+		}
+		else
+		{
+			DrawOrange(window, game.orange);
+			DrawText(window, game.pointsText);
+            #pragma region BodyDraw
+			DrawPlayer(window, game.player);
+#pragma endregion
+
+			if (game.ifDead) {
+				for (int i = 0; i < sizeof(game.deathPanels) / sizeof(game.deathPanels[0]); ++i) DrawPanel(game.deathPanels[i], window);
+				for (int i = 0; i < sizeof(game.DeathText) / sizeof(game.DeathText[0]); ++i) DrawText(window, game.DeathText[i]);
+				for (int i = 0; i < sizeof(game.deathButtons) / sizeof(game.deathButtons[0]); ++i) DrawButton(window, game.deathButtons[i]);
+			}
+			if (game.ifPaused) {
+				for (int i = 0; i < sizeof(game.pausePanels) / sizeof(game.pausePanels[0]); ++i) DrawPanel(game.pausePanels[i], window);
+				for (int i = 0; i < sizeof(game.pauseButtons) / sizeof(game.pauseButtons[0]); ++i) DrawButton(window, game.pauseButtons[i]);
+				DrawText(window, game.pauseText);
+			}
+            #pragma region ButtonCheck
+			IfPoint(game.deathButtons[0], game, { (float)game.mousePos.x, (float)game.mousePos.y }, game.isMouseClicked, [=](Button& button, Game& game) {
+				Restart(game.deathButtons[0], game);
+				});
+			IfPoint(game.pauseButtons[0], game, { (float)game.mousePos.x, (float)game.mousePos.y }, game.isMouseClicked, [=](Button& button, Game& game) {
+				Continue(game.pauseButtons[0], game);
+				});
+
+			IfPoint(game.deathButtons[1], game, { (float)game.mousePos.x, (float)game.mousePos.y }, game.isMouseClicked, [=](Button& button, Game& game) {
+				GoToMenu(game.deathButtons[1], game);
+				});
+			IfPoint(game.pauseButtons[1], game, { (float)game.mousePos.x, (float)game.mousePos.y }, game.isMouseClicked, [=](Button& button, Game& game) {
+				GoToMenu(game.pauseButtons[1], game);
+				});
+
+#pragma endregion
+		}
 	}
 }

@@ -33,11 +33,10 @@ int main() {
 				window.close();
 			}
 		}
-		Update(game, deltaTime, window);
+		if (game.gameState == GameState::Game) Update(game, deltaTime, window);
 
 		window.clear();
 		Draw(game, window);
-
 		window.display();
 	}
 

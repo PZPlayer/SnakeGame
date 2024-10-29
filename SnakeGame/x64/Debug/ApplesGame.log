@@ -6,5 +6,5 @@
   Panel.cpp
   Player.cpp
   TextConfg.cpp
-  Создание кода...
-LINK : fatal error LNK1104: не удается открыть файл "sfml-main-d.lib"
+  Generating Code...
+  ApplesGame.vcxproj -> C:\Users\lzhil\Documents\GitHub\SnakeGame\SnakeGame\x64\Debug\ApplesGame.exe
