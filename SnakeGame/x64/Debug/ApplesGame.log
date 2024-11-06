@@ -1,10 +1,2 @@
-﻿  Button.cpp
-  Game.cpp
-  GameMain.cpp
-  Math.cpp
-  Orange.cpp
-  Panel.cpp
-  Player.cpp
-  TextConfg.cpp
-  Generating Code...
+﻿  Game.cpp
   ApplesGame.vcxproj -> C:\Users\lzhil\Documents\GitHub\SnakeGame\SnakeGame\x64\Debug\ApplesGame.exe

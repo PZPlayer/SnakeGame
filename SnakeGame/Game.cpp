@@ -190,16 +190,20 @@ namespace SnakeGame {
 
 	void Update(Game& game, float deltaTime, sf::RenderWindow& window) {
         #pragma region KeyCheck
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) && game.prevDirec != PlayerDirection::left) {
 			game.direction = PlayerDirection::right;
+			game.prevDirec = game.direction;
 		}
-		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::A) && game.prevDirec != PlayerDirection::right) {
+			game.prevDirec = game.direction;
 			game.direction = PlayerDirection::left;
 		}
-		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) && game.prevDirec != PlayerDirection::down) {
+			game.prevDirec = game.direction;
 			game.direction = PlayerDirection::up;
 		}
-		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S) && game.prevDirec != PlayerDirection::up) {
+			game.prevDirec = game.direction;
 			game.direction = PlayerDirection::down;
 		}
 
@@ -211,6 +215,7 @@ namespace SnakeGame {
 		if (game.moveTimer.getElapsedTime().asSeconds() >= game.delay && !game.ifDead && !game.ifPaused)
 		{
 			sf::Vector2i lastHeadPos = game.player.snakeHead;
+			
 			switch (game.direction)
 			{
 			case PlayerDirection::right:
@@ -233,20 +238,24 @@ namespace SnakeGame {
 
 			game.player.snakeBody.erase(game.player.snakeBody.end() - 1);
 
+
+
 			game.player.snakeHead.x = std::max(0, std::min(game.player.snakeHead.x, numCols - 1));
 			game.player.snakeHead.y = std::max(0, std::min(game.player.snakeHead.y, numRows - 1));
 
 
 			game.player.snakeParts[0].setPosition(float(lastHeadPos.x * cellSize), float(lastHeadPos.y * cellSize));
 
-			game.moveTimer.restart();
-		}
-#pragma endregion
-        #pragma region CheckIfDeath
-		for (int i = 0; i < game.player.snakeBody.size(); ++i) {
-			if (game.player.snakeBody[i].x == game.player.snakeHead.x && game.player.snakeBody[i].y == game.player.snakeHead.y && game.saveTimer.getElapsedTime().asSeconds() >= 1 && !game.ifDead) {
-				GameOver(window, game);
+#pragma region CheckIfDeath
+			for (int i = 0; i < game.player.snakeBody.size(); ++i) {
+				if (game.player.snakeBody[i].x == game.player.snakeHead.x && game.player.snakeBody[i].y == game.player.snakeHead.y && !game.ifDead) {
+					GameOver(window, game);
+				}
 			}
+#pragma endregion
+
+
+			game.moveTimer.restart();
 		}
 #pragma endregion
 		if (ifTouchObj(game.player.snakeHead, game.orange.position, 1, 1)) {

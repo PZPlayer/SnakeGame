@@ -57,6 +57,7 @@ namespace SnakeGame {
 
 	struct Game {
 		PlayerDirection direction = PlayerDirection::right;
+		PlayerDirection prevDirec = PlayerDirection::right;
 		GameState gameState = GameState::Menu;
 		PlayerState playerState = PlayerState::Idle;
 		MenuState menuState = MenuState::Menu;
